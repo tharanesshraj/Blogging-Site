@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+    <h1>DashBoard</h1>
+    <h1>Welcome {{ session.username }}</h1>
+    <p><a href="/add_article">Add Article</a></p>
+    
+    <h3>Your Articles</h3>
+
+
+    <table>
+            <tr>
+              <th>Title</th>
+              <th>Date</th>
+            </tr>
+            {% for article in articles %}
+                <tr>
+                    <td><a href="/article/{{ article[0] }}">{{article[1]}}</a></td>
+                    <td>{{article[4]}}</td>
+                </tr>
+            {% endfor %}
+    </table>
+
+
+
+
+
+
+
+{% endblock %}

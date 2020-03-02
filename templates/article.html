@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+
+<h1>{{ article[0][1] }}</h1>
+<small>Written by {{ article[0][2] }} on : {{ article[0][4] }}</small>
+<hr>
+{{ article[0][3]|safe}}
+
+{% endblock %}

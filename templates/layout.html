@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>{% block title%}{% endblock %}</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+        <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
+        {% block others %} {% endblock %}
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+        <div style="padding:20px;margin-top:30px;height:1500px;">
+            {% block body %}
+            {% endblock %}
+        </div>
+        <div class="message">
+            {% include 'includes/messages.html' %}
+        </div>
+    </body>
+</html>

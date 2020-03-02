@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block title %}HomePage{% endblock %}
+
+
+{% block body %}
+        <div style="text-align: center;">
+        <h1>A simple Blogging Site</h1>
+        </div>
+        {% if 'username' in session %}
+                <p> Logged in as  {{ session['username'] }}<p>
+        {% else %}
+                <p>You are not logged in <a href = '/login'>Click here to log in</a> </p>
+        {% endif %}
+
+        <h2>Articles : </h2>
+
+        <table>
+                        <tr>
+                          <th>Title</th>
+                          <th>Author</th>
+                        </tr>
+                        {% for article in articles %}
+                            <tr>
+                                <td><a href="/article/{{ article[0] }}">{{article[1]}}</a></td>
+                                <td>{{article[2]}}</td>
+                            </tr>
+                        {% endfor %}
+                      </table>
+
+
+
+{% endblock %}

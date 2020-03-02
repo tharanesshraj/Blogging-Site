@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block others %}
+<style>
+.box{
+    width: 550px;
+    height: 550px;               
+}
+
+</style>
+{% endblock %}
+
+
+{% block body %}
+        <div class="box">
+        <h1>Register</h1>
+        <form method="POST" action="">
+                <div class="inputBox">
+                            <input class="form-control" id="name" name="name" required type="text" value="" minlength="4">
+                            <label for="name">Name</label>
+                </div>
+                <div class="inputBox">
+                            <input class="form-control" id="email" name="email" required type="email" value="" >
+                            <label for="name">Email</label>
+                </div>
+                <div class="inputBox">
+                            <input class="form-control" id="username" name="username" required type="text" value="">
+                            <label for="name">Username</label>   
+                </div>
+                <div class="inputBox">
+                            <input class="form-control" id="password" name="password" required type="password" value="">
+                            <label for="name">Password</label>
+                </div>
+                <div class="inputBox">
+                            <input class="form-control" id="Confirm Password" name="cpassword" required type="password" value="">
+                            <label for="name">Confirm Password</label>                
+                </div>
+                <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+        </form>
+        </div>
+        
+{% endblock %}

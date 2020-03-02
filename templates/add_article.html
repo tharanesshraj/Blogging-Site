@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+{% block title %}Add Article{% endblock %}
+
+{% block others %}
+
+<style type="text/css">
+.editor{
+    height: 600px;
+}
+
+.form-style-8{
+    width: 90%;
+    padding: 40px;
+    background: #FFFFFF;
+    margin: 60px auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+
+.form-style-8 h2{
+    background: #4D4D4D;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #797979;
+    font-size: 18px;
+    font-weight: 100;
+    padding: 20px;
+    margin: -30px -30px 30px -30px;
+}
+.form-style-8 input[type="text"]{
+    box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 10px;
+    height: 45px;
+}
+.form-style-8 input[type="submit"]{
+    border: 1px solid ;
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div class="form-style-8">
+
+<form action="" method="POST">
+    <h2>Add your Article</h2>
+        <label>Title</label>
+        <input type="text" id="title" name="title"/>
+
+        <label>Body</label>
+        <textarea id="editor" name="body"></textarea>
+    <br>
+    <input type="submit" value="POST">
+</form>
+
+</div>
+
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+
+
+{% endblock %}

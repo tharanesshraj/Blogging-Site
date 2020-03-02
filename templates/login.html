@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block others %}
+<style>
+.box{
+  
+    width: 550px;
+    height: 350px;              
+}
+
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="box">
+    <h1>Login</h1>
+    <form action="" method="POST">
+      <div class="inputBox">
+              <label>Username</label>
+              <input type="text" name="username" class="form-control" value={{request.form.username}}>
+      </div>
+      <div class="inputBox">
+              <label>Password</label>
+              <input type="password" name="password" class="form-control" value={{request.form.password}}>
+      </div>
+      <!--<button type="submit" class="btn btn-primary">Submit</button>-->
+      <p><input type="submit" class="btn" value="Submit"></p>
+    </form>
+</div>
+{% endblock %}

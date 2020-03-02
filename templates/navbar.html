@@ -1,0 +1,48 @@
+
+<style>
+    
+    
+    .navbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        font-family: sans-serif;
+    }
+    
+    .navbar li {
+        float: left;
+    }
+    
+    .navbar li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    
+    .navbar li a:hover:not(.active) {
+        background-color: #111;
+    }
+    
+    .navbar .active {
+        background-color: #4CAF50;
+    }
+    </style>
+
+<ul class="navbar" >
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    {% if 'username' in session %}
+    <li style="float:right"><a href="/dashboard">{{ session['username'] }}</a></li>
+    <li style="float:right"><a href="/logout">Logout</a></li>
+    {% else %}
+    <li style="float:right"><a href ='/login'>Login</a></li>
+    <li style="float:right"><a href="/register">Register</a></li>
+    {% endif %}
+</ul>
